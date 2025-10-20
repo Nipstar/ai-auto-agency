@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './Button';
 
@@ -10,6 +10,20 @@ const navigate = (path: string) => {
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    if (isServicesOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isServicesOpen]);
 
   const navLinks = [
     { label: 'Home', href: '/', onClick: () => navigate('/') },
@@ -44,10 +58,9 @@ export function Navigation() {
                 {link.label}
               </button>
             ))}
-            <div className="relative" onMouseLeave={() => setIsServicesOpen(false)}>
+            <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                onMouseEnter={() => setIsServicesOpen(true)}
                 className="font-bold uppercase text-sm text-charcoal hover:text-terracotta transition-colors flex items-center space-x-1"
               >
                 <span>Services</span>

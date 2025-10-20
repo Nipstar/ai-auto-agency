@@ -10,7 +10,6 @@ Disallow: /dist/
 
 # Crawl delay for all bots
 Crawl-delay: 1
-Request-rate: 30/60
 
 # Sitemap location
 Sitemap: https://aiautomationagencyuk.com/sitemap.xml
@@ -18,7 +17,6 @@ Sitemap: https://aiautomationagencyuk.com/sitemap.xml
 # Google Search Console specific
 User-agent: Googlebot
 Allow: /
-Priority: high
 
 # Bing specific
 User-agent: Bingbot
