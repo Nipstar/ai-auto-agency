@@ -44,7 +44,7 @@ export function Navigation() {
                 {link.label}
               </button>
             ))}
-            <div className="relative">
+            <div className="relative" onMouseLeave={() => setIsServicesOpen(false)}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
@@ -54,25 +54,19 @@ export function Navigation() {
                 <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               {isServicesOpen && (
-                <>
-                  <div
-                    className="fixed inset-0 z-10"
-                    onClick={() => setIsServicesOpen(false)}
-                  />
-                  <div
-                    className="absolute top-full left-0 mt-2 bg-off-white border-3 border-charcoal shadow-brutal min-w-[260px] z-20"
-                  >
-                    {serviceLinks.map((link) => (
-                      <button
-                        key={link.href}
-                        onClick={() => { navigate(link.href); setIsServicesOpen(false); }}
-                        className="block w-full text-left px-6 py-4 font-bold uppercase text-sm text-charcoal hover:bg-warm-beige transition-colors border-b-3 border-charcoal last:border-b-0 bg-transparent border-none cursor-pointer"
-                      >
-                        {link.label}
-                      </button>
-                    ))}
-                  </div>
-                </>
+                <div
+                  className="absolute top-full left-0 mt-2 bg-off-white border-3 border-charcoal shadow-brutal min-w-[260px] z-50"
+                >
+                  {serviceLinks.map((link) => (
+                    <button
+                      key={link.href}
+                      onClick={() => { navigate(link.href); setIsServicesOpen(false); }}
+                      className="block w-full text-left px-6 py-4 font-bold uppercase text-sm text-charcoal hover:bg-warm-beige transition-colors border-b-3 border-charcoal last:border-b-0 bg-transparent border-none cursor-pointer"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
             <Button variant="primary" onClick={() => window.dispatchEvent(new Event('openChatbot'))}>Get Started</Button>

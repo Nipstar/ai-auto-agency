@@ -124,32 +124,32 @@ export function ContactPage() {
       />
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
-          <h1 className="font-black text-5xl md:text-6xl uppercase tracking-tight-xl text-charcoal mb-6">
+          <h1 className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight-xl text-charcoal mb-6 leading-tight">
             Get Started with Antek Automation
           </h1>
-          <p className="text-lg text-charcoal leading-normal max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-charcoal leading-normal max-w-2xl mx-auto">
             Tell us about your business and we'll show you exactly how AI automation can help you grow
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <Card>
-            <h3 className="font-black text-xl uppercase text-charcoal mb-2">Email</h3>
-            <p className="text-charcoal">hello@antekautomation.com</p>
+            <h3 className="font-black text-lg uppercase text-charcoal mb-2">Email</h3>
+            <p className="text-sm sm:text-base text-charcoal break-words">hello@antekautomation.com</p>
           </Card>
           <Card>
-            <h3 className="font-black text-xl uppercase text-charcoal mb-2">Phone</h3>
-            <p className="text-charcoal">0333 335 7920</p>
+            <h3 className="font-black text-lg uppercase text-charcoal mb-2">Phone</h3>
+            <p className="text-sm sm:text-base text-charcoal">0333 335 7920</p>
           </Card>
           <Card>
-            <h3 className="font-black text-xl uppercase text-charcoal mb-2">Location</h3>
-            <p className="text-charcoal">Hampshire, United Kingdom</p>
+            <h3 className="font-black text-lg uppercase text-charcoal mb-2">Location</h3>
+            <p className="text-sm sm:text-base text-charcoal">Hampshire, United Kingdom</p>
           </Card>
         </div>
 
         <Card>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-6">
               <div>
                 <label className="font-black text-charcoal mb-2 block uppercase text-sm">
                   Name *
@@ -178,7 +178,7 @@ export function ContactPage() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-6">
               <div>
                 <label className="font-black text-charcoal mb-2 block uppercase text-sm">
                   Phone *
@@ -208,7 +208,7 @@ export function ContactPage() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-2 gap-6">
               <div>
                 <label className="font-black text-charcoal mb-2 block uppercase text-sm">
                   Service Type
