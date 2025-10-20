@@ -37,26 +37,26 @@ export const cities: Record<string, CityData> = {
       'All London Boroughs',
     ],
     localContext:
-      "London's fast-paced business environment demands instant response times. Service businesses across the capital are turning to AI automation to stay competitive in the UK's largest market.",
+      'London demands speed. With competition fierce across all 33 boroughs, missing a single customer enquiry costs real money. That\'s why leading London service businesses partner with Antek for AI-powered customer handling that never sleeps.',
     metaDescription:
-      'AI automation for London businesses. Voice agents, chatbots & workflow automation to streamline operations & boost ROI. Antek Automation UK.',
+      'AI automation agency London | AI chatbots & voice automation for London service businesses. Antek Automation: 40% more leads, 20hrs/week saved.',
     heroDescription:
-      "London businesses can't afford to miss a single call. Our AI voice agents answer every enquiry instantly, book appointments while you're on the job, and handle customer questions 24/7—giving you a competitive edge in the capital's bustling market.",
+      'Every missed call in London is a lost customer in the world\'s most competitive business market. Our AI voice agents work 24/7 across all London boroughs—capturing every enquiry, booking every appointment, handling every question while you focus on delivery. Instantly available. Always professional. Never sleeps.',
     whyChooseUs: [
       {
-        title: 'Instant Response in a Fast-Paced Market',
+        title: 'Never Miss a London Enquiry Again',
         description:
-          "London customers expect immediate answers. Our AI assistants respond in seconds, ensuring you never lose business to competitors in the UK's most competitive market.",
+          'Whether you\'re onsite in Southwark or servicing Westminster, our AI answers every call instantly. No more voicemail frustration. Every customer gets immediate, professional attention—building trust and capturing business automatically.',
       },
       {
-        title: 'Cover All 33 London Boroughs',
+        title: 'Geographic Flexibility Across Greater London',
         description:
-          'From Barking to Westminster, our voice agents handle enquiries across Greater London, managing service area questions and booking appointments for any borough you serve.',
+          'Serving multiple London boroughs? Our AI understands local geography, handles service area questions naturally, and books appointments across all areas you cover—from Croydon to Barnet, Ealing to Tower Hamlets.',
       },
       {
-        title: 'No Expensive London Office Needed',
+        title: 'London Quality at Startup Prices',
         description:
-          'Get a professional phone presence without the cost of London premises or receptionist salaries. Our AI handles calls as professionally as a Mayfair office—at a fraction of the price.',
+          'Get the professional call handling of a major London firm without the expensive central office, reception team, or infrastructure costs. Sound established. Act fast. Keep overhead low.',
       },
     ],
     testimonial: {
@@ -84,26 +84,26 @@ export const cities: Record<string, CityData> = {
       'All Birmingham Districts',
     ],
     localContext:
-      "As the UK's second city, Birmingham's diverse business community needs efficient communication systems. From Jewellery Quarter startups to established Midlands enterprises, AI automation is transforming how local businesses operate.",
+      'Birmingham businesses are ambitious. From the Jewellery Quarter to the industrial suburbs, service companies here compete hard. Missing customer calls costs real contracts. That\'s why smart Birmingham firms use AI to capture every opportunity, every time.',
     metaDescription:
-      'AI automation for Birmingham businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
+      'AI automation agency Birmingham | Business automation for service businesses. Antek Automation: AI chatbots & voice systems. 40% more leads.',
     heroDescription:
-      "Birmingham's thriving service sector demands reliable call handling. Our intelligent voice agents manage your calls across the West Midlands, from Sutton Coldfield to Solihull—ensuring every customer gets instant attention whilst you focus on delivering quality work.",
+      'Serving Birmingham\'s Jewellery Quarter? Travelling between Solihull and Edgbaston? Your phone is your lifeline—and you\'re probably missing half the calls. Our AI works across all West Midlands locations, answering instantly, booking jobs automatically. Available around the clock. Zero missed opportunities.',
     whyChooseUs: [
       {
-        title: 'Serve the Entire West Midlands',
+        title: 'Capture Every Birmingham Customer',
         description:
-          'From Birmingham city centre to surrounding boroughs, our AI handles service area enquiries and books jobs across the region without you lifting a finger.',
+          'From city centre corporate accounts to suburban domestic jobs, from morning emergency calls to evening emergency requests—our AI captures every enquiry across all West Midlands districts, booking everything perfectly.',
       },
       {
-        title: 'Support Midlands Business Growth',
+        title: 'Stay Ahead in a Competitive Market',
         description:
-          "Birmingham's business landscape is booming. Scale your operations without hiring extra staff—our voice agents grow with your business at no additional cost.",
+          'Birmingham customers expect fast responses. When your AI answers in seconds while competitors are still in the field, you win. Instant quotes, instant bookings, instant advantage.',
       },
       {
-        title: '24/7 Coverage for Shift Workers',
+        title: 'Grow Without Growing Overhead',
         description:
-          'Many Birmingham businesses operate outside 9-5. Our AI ensures enquiries from night shifts, early mornings, and weekends are captured whilst traditional offices are closed.',
+          'Scaling a Birmingham business usually means hiring more staff. Not anymore. Our AI scales with you automatically—handling 10 calls or 100 calls with zero additional cost or complexity.',
       },
     ],
     testimonial: {
@@ -131,26 +131,26 @@ export const cities: Record<string, CityData> = {
       'All Greater Manchester',
     ],
     localContext:
-      "Manchester's reputation as a hub for innovation extends to its service businesses. From MediaCityUK to the Northern Quarter, forward-thinking companies are adopting AI to stay ahead in the Northwest's most dynamic market.",
+      'Manchester moves fast. The North\'s business capital demands reliability and speed—and service businesses here are adopting AI to stay competitive. From city centre to surrounding boroughs, smart companies are capturing every customer interaction.',
     metaDescription:
-      'AI automation for Manchester businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
+      'AI automation agency Manchester | Business automation UK for Greater Manchester. Antek Automation: AI chatbots, voice automation, lead generation.',
     heroDescription:
-      "Greater Manchester's service businesses need to move fast. Our AI voice agents handle calls from Salford to Stockport, answer questions about your services instantly, and book appointments whilst you're busy—helping you serve the entire city region efficiently.",
+      'Greater Manchester throws everything at service businesses: Salford contracts, Stockport call-outs, Wigan emergencies. Your phone rings constantly—and you miss half the calls. Our AI handles Greater Manchester\'s pace perfectly. Every call answered. Every opportunity captured. Round the clock.',
     whyChooseUs: [
       {
-        title: "Match Manchester's Innovation Spirit",
+        title: 'Handle Greater Manchester\'s Demand',
         description:
-          "The city that led the Industrial Revolution now leads in AI adoption. Join Manchester businesses embracing automation to deliver faster, smarter customer service.",
+          'From Bolton\'s early morning calls to Wigan\'s evening emergencies, from Salford\'s corporate contracts to Stockport\'s domestic jobs—our AI answers every call across all 10 boroughs, booking everything in automatically.',
       },
       {
-        title: 'Cover All 10 Greater Manchester Boroughs',
+        title: 'Respond Faster Than Your Competitors',
         description:
-          'From Bolton to Tameside, our voice agents understand Greater Manchester geography, handle service area questions, and book jobs across the entire city region.',
+          'Customers calling a Manchester business expect instant answers. Our AI responds in seconds, books appointments while competitors are still listening to voicemail, and books jobs before they call someone else.',
       },
       {
-        title: 'Compete with Bigger Firms',
+        title: 'Scale Without Adding Staff',
         description:
-          'Give your small Manchester business the phone system of a large corporation. Professional call handling that makes you sound established—without the overheads.',
+          'Growing Manchester businesses hit a ceiling: hire more staff or lose more calls. Skip that headache. Scale your call handling instantly with AI that grows with you—no recruitment, no training, no payroll.',
       },
     ],
     testimonial: {
@@ -177,26 +177,26 @@ export const cities: Record<string, CityData> = {
       'All Leeds Districts',
     ],
     localContext:
-      "Leeds combines traditional Yorkshire work ethic with modern business innovation. Service businesses from Headingley to Hunslet are discovering how AI automation helps them do more with less—typical Yorkshire efficiency.",
+      'Leeds service businesses are growing fast. From Chapel Allerton to Rothwell, smart operators are using AI to handle calls they\'re too busy to answer. That means more revenue without hiring more staff. That\'s Yorkshire business sense.',
     metaDescription:
-      'AI automation for Leeds businesses. Voice agents, chatbots & workflow automation to streamline operations & boost ROI. Antek Automation UK.',
+      'AI automation agency Leeds | Business automation for West Yorkshire. Antek Automation: AI voice agents, chatbots, workflow automation solutions.',
     heroDescription:
-      "Leeds businesses pride themselves on reliability and hard graft. Our AI voice agents embody these values—answering every call, handling bookings professionally, and working round the clock so you can focus on delivering top-quality service across West Yorkshire.",
+      'You\'re in Headingley, they\'re calling from Pudsey. You\'re installing in Bramley, the phone\'s ringing in Chapel Allerton. Miss the call, lose the job. Our AI covers all of West Yorkshire 24/7—answering instantly, booking appointments while you work. Never miss again.',
     whyChooseUs: [
       {
-        title: 'Yorkshire Value for Money',
+        title: 'Cover Every Leeds District at Once',
         description:
-          "Get professional call handling at a price that makes sense. No fancy London overheads—just efficient AI that works as hard as you do, delivering proper value.",
+          'Managing jobs across all LS postcodes? Our AI answers calls from every area, understands local geography perfectly, and books appointments while you\'re focused on delivery. One system, complete coverage.',
       },
       {
-        title: 'Serve All Leeds Districts',
+        title: 'Smart Yorkshire Efficiency',
         description:
-          'From city centre to Chapel Allerton, our AI knows Leeds geography inside out. Handles service area questions and books appointments across all LS postcodes.',
+          'Leeds businesses work hard. Our AI works the same way—efficient, reliable, focused. No wasted words. No missed calls. Just results that matter to your bottom line.',
       },
       {
-        title: 'Professional Without the Cost',
+        title: 'Professional Image, Lean Operation',
         description:
-          "Sound like a big Leeds firm without the big Leeds overheads. Our voice agents give you city centre professionalism at small business prices.",
+          'Sound big, stay small. Give customers a professional response 24/7 while keeping your operation lean and profitable. That\'s the Leeds way.',
       },
     ],
     testimonial: {
@@ -223,26 +223,26 @@ export const cities: Record<string, CityData> = {
       'All Merseyside',
     ],
     localContext:
-      "Liverpool's entrepreneurial spirit is legendary. From waterfront businesses to local service providers, Merseyside companies are embracing AI to deliver the rapid, friendly service that Scousers expect.",
+      'Liverpool service businesses have heart. From Albert Dock offices to suburban job sites, they genuinely care about service. Our AI adds tireless availability to that—answering every call with the same warmth and professionalism your customers expect.',
     metaDescription:
       'AI automation for Liverpool businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
     heroDescription:
-      "Liverpool businesses are known for their warm, personal service. Our AI voice agents combine that friendly approach with never-miss reliability—handling calls across Merseyside, booking appointments, and ensuring every customer feels valued, even when you're busy on site.",
+      'Liverpool businesses earn trust through warmth and reliability. Our AI adds "always available" to that equation. Calls from Anfield to Allerton, from morning to midnight—our voice agents answer professionally, book beautifully, and let you focus on delivering the service Liverpool customers love.',
     whyChooseUs: [
       {
-        title: 'Friendly, Professional Service',
+        title: 'Warm Professionalism 24/7',
         description:
-          "Scousers appreciate good service. Our AI delivers warm, helpful responses that match Liverpool's reputation for friendliness—answering questions and booking jobs with genuine care.",
+          'Liverpool customers want genuine, friendly service. Our AI delivers exactly that—warm, helpful, professional responses every call, every time, around the clock.',
       },
       {
-        title: 'Cover All Merseyside',
+        title: 'Coverage Across All Merseyside',
         description:
-          'From Liverpool city centre to Crosby and beyond, our voice agents handle service area enquiries across the entire Merseyside region, ensuring you never miss local work.',
+          'From Liverpool city centre to Crosby, Wavertree to Bootle—our AI covers Merseyside completely. Every area served. Every call answered. No exceptions.',
       },
       {
-        title: 'Always Available for Customers',
+        title: 'Never Turn Away a Customer',
         description:
-          "Liverpool moves fast. Our AI ensures customers get instant responses whether they call at lunchtime or midnight—capturing business 24/7 whilst you're off the clock.",
+          'Liverpool never closes. Our AI doesn\'t either. Weekend calls, evening emergencies, bank holidays—your customers get instant, professional responses while you work or rest.',
       },
     ],
     testimonial: {
@@ -269,26 +269,26 @@ export const cities: Record<string, CityData> = {
       'All Glasgow Districts',
     ],
     localContext:
-      "Scotland's largest city leads the nation in business innovation. Glasgow service businesses from the Merchant City to the West End are adopting AI to handle their growing customer base whilst maintaining the personal touch the city is famous for.",
+      'Glasgow is Scotland\'s business engine. Service companies here move fast, compete hard, and demand AI that keeps up. That\'s why leading Glasgow businesses trust Antek to answer every call, capture every opportunity.',
     metaDescription:
-      'AI automation for Glasgow businesses. Voice agents, chatbots & workflow automation to streamline operations & boost ROI. Antek Automation UK.',
+      'AI automation agency Glasgow Scotland | Business automation solutions. Antek Automation: AI chatbots, voice systems, workflow automation UK.',
     heroDescription:
-      "Glasgow's service sector thrives on reliability and straight-talking. Our AI voice agents deliver both—managing calls across the city, answering customer questions clearly, and booking appointments whilst you're focused on the work. No fuss, just results.",
+      'Juggling calls from Merchant City to the West End? Missing customers while you\'re on site? Glasgow businesses deserve AI that matches their pace and professionalism. Our voice agents work 24/7 across Glasgow, answering perfectly, booking automatically. Fast. Professional. Scottish efficient.',
     whyChooseUs: [
       {
-        title: "Scotland's Biggest City Covered",
+        title: 'Answer Every Glasgow Call Instantly',
         description:
-          "From Finnieston to the East End, our AI handles Glasgow's geography. Service area questions answered instantly, appointments booked across all G postcodes.",
+          'From Finnieston morning calls to Southside evening enquiries, our AI covers all Glasgow districts 24/7. Every customer gets an instant professional response. Every opportunity captured.',
       },
       {
-        title: 'Straight-Talking Service',
+        title: 'Glasgow Pace, Glasgow Quality',
         description:
-          'Glaswegians appreciate clear, honest communication. Our voice agents deliver exactly that—no waffle, just helpful answers and efficient booking.',
+          'Glasgow customers expect answers now. Our AI delivers—no lag, no hold music, no missed calls. Professional, quick, and no-nonsense.',
       },
       {
-        title: 'Scale Without Growing Overheads',
+        title: 'Scale Your Business, Not Your Costs',
         description:
-          'Grow your Glasgow business without hiring extra staff. Our AI handles increased call volume automatically, letting you take on more work profitably.',
+          'Growing fast in Glasgow? Our AI scales instantly with zero new hires, zero new overhead. Take more calls, book more jobs, grow more profit.',
       },
     ],
     testimonial: {
@@ -315,26 +315,26 @@ export const cities: Record<string, CityData> = {
       'All Tyne and Wear',
     ],
     localContext:
-      'Newcastle and the wider Northeast are experiencing a business renaissance. Service companies across Tyne and Wear are modernising operations with AI, combining traditional Geordie work ethic with cutting-edge technology.',
+      'Newcastle and Tyne & Wear businesses are modern. But they\'re also pragmatic—which means they like AI that works, not hype. Our system answers calls, books jobs, and helps your business grow. That\'s real Northeast innovation.',
     metaDescription:
       'AI automation for Newcastle businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
     heroDescription:
-      "Tyne and Wear businesses know the importance of being reliable and approachable. Our AI voice agents deliver on both fronts—handling calls from Newcastle to North Shields, answering questions in a friendly manner, and booking jobs whilst you're grafting on site.",
+      'Covering Jesmond to Gateshead, North Shields to South Shields? Too many calls, not enough hands. Our AI works across all Tyne & Wear, answering every call professionally, booking every appointment perfectly. Canny Newcastle business gets smart AI that actually works.',
     whyChooseUs: [
       {
-        title: 'Cover the Whole Northeast',
+        title: 'Serve Every Tyne & Wear District',
         description:
-          'From Newcastle city centre to Gateshead and beyond, our AI handles service enquiries across Tyne and Wear, ensuring you capture work throughout the region.',
+          'From Newcastle city centre to Gateshead, North Shields to South Shields—our AI covers the entire Northeast. Every location served. Every call captured. Professional response every time.',
       },
       {
-        title: 'Friendly, Approachable Service',
+        title: 'Friendly Northeast Service',
         description:
-          "Geordies are famous for being canny and friendly. Our voice agents match that approach—helpful, warm responses that make customers feel welcome whilst efficiently booking their jobs.",
+          'Customers expect warmth and competence. Our AI delivers both—genuine, helpful responses that feel personal, but efficient booking that feels professional.',
       },
       {
-        title: 'Affordable for Northeast Businesses',
+        title: 'Northeast Rates for Northeast Businesses',
         description:
-          'Get professional phone handling without London prices. Our AI delivers top-quality service at rates that make sense for Northeast companies.',
+          'No fancy London pricing. Our AI costs less, works harder, and gives your Northeast business real advantage without breaking the bank.',
       },
     ],
     testimonial: {
@@ -363,26 +363,26 @@ export const cities: Record<string, CityData> = {
       'All Hampshire Districts',
     ],
     localContext:
-      "Hampshire's diverse business landscape—from coastal cities to rural market towns—demands flexible, reliable communication systems. Service businesses across the county are turning to AI automation to manage their growing customer base efficiently.",
+      'Hampshire is spread out. Portsmouth contracts. Southampton jobs. Winchester clients. Rural emergencies. One business, one phone, too many places. That\'s where AI actually solves a real Hampshire problem.',
     metaDescription:
       'AI automation for Hampshire businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
     heroDescription:
-      "Hampshire businesses serve a wide geographic area, from Portsmouth's waterfront to Winchester's historic streets. Our AI voice agents handle calls across the county, answer customer questions instantly, and book appointments whilst you're on the road—ensuring no opportunity is missed.",
+      'Hampshire service businesses cover massive distances. Southampton to Aldershot. Portsmouth to Winchester. One phone, endless travel. Our AI works everywhere, answering from coast to countryside, booking every appointment while you drive between jobs. Total Hampshire coverage. Zero missed calls.',
     whyChooseUs: [
       {
-        title: 'Cover All Hampshire Districts',
+        title: 'Complete Hampshire County Coverage',
         description:
-          'From Southampton to Basingstoke, Portsmouth to Winchester, our AI understands Hampshire geography and handles service area enquiries across the entire county seamlessly.',
+          'From coastal Portsmouth to rural Andover, from Southampton through to Basingstoke—our AI covers all Hampshire districts simultaneously. Every location. Every call. Every opportunity captured.',
       },
       {
-        title: 'Perfect for Multi-Location Coverage',
+        title: 'Multi-Area Specialist',
         description:
-          "Serving both coastal cities and inland towns? Our voice agents manage enquiries from all areas, booking jobs efficiently whether customers call from Fareham or Farnborough.",
+          'Most service businesses in Hampshire serve multiple districts. Our AI understands that reality—manages enquiries from every area, understands local geography perfectly, books efficiently whether calls come from coast or countryside.',
       },
       {
-        title: 'Professional Service, Local Understanding',
+        title: 'Professional Without the Overhead',
         description:
-          'Get the reliability and professionalism Hampshire customers expect, with AI that understands local areas, postcodes, and service needs—without expensive office overheads.',
+          'Give customers the professional service Hampshire expects without hiring office staff. Our AI gives your small Hampshire business the infrastructure of a major firm.',
       },
     ],
     testimonial: {

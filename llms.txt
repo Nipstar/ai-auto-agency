@@ -4,7 +4,7 @@
 
 Antek Automation is a production-ready marketing website for a UK-based AI automation company. The site features a neo-brutalist design with an earth-tone color palette and serves as a lead generation platform for AI chatbot, voice assistant, and workflow automation services.
 
-**Live Site:** https://antekautomation.co.uk
+**Live Site:** https://aiautomationagencyuk.com
 **Repository:** Internal Git repository
 **Status:** Production-ready with recent PageSpeed optimizations
 
@@ -33,15 +33,15 @@ Antek Automation is a production-ready marketing website for a UK-based AI autom
 ## Architecture Overview
 
 ### Routing
-**Hash-based routing** (not React Router) - manually implemented via `window.location.hash`
+**Pathname-based routing** (not React Router) - manually implemented via `window.location.pathname`
 
 Routes:
-- `/` or `#/` → HomePage
-- `#/contact` → ContactPage (lead capture form)
-- `#/services/ai-chatbots` → AIChatbotsPage
-- `#/services/ai-voice-assistants` → AIVoiceAssistantsPage
-- `#/services/workflow-automation` → WorkflowAutomationPage
-- `#/locations/:citySlug` → LocationPage (dynamic location pages)
+- `/` → HomePage
+- `/contact` → ContactPage (lead capture form)
+- `/services/ai-chatbots` → AIChatbotsPage
+- `/services/ai-voice-assistants` → AIVoiceAssistantsPage
+- `/services/workflow-automation` → WorkflowAutomationPage
+- `/locations/:citySlug` → LocationPage (dynamic location pages)
 
 Navigation automatically scrolls to top on route change.
 
@@ -149,7 +149,7 @@ letterSpacing: {'tight-xl': '-2px', 'tight-lg': '-1px'}
   "sessionId": "session_1696151234567_abc123",
   "message": "Can you help me automate my business?",
   "timestamp": "2025-10-01T10:30:00.000Z",
-  "pageUrl": "https://antekautomation.co.uk/#/",
+  "pageUrl": "https://aiautomationagencyuk.com/",
   "source": "website_chatbot"
 }
 ```
@@ -334,9 +334,9 @@ Then set environment variables to ngrok URLs.
 ## Key Implementation Patterns
 
 ### Navigation & Routing
-- Use `window.location.hash = '/path'` for navigation
+- Use `window.history.pushState()` with `window.dispatchEvent(new PopStateEvent('popstate'))` for navigation
 - Custom event `new Event('openChatbot')` for global UI triggers
-- Hash routing auto-scrolls to top on route change
+- Pathname routing auto-scrolls to top on route change
 
 ### State Management
 - **Props** - Primary data flow (pages receive props like `citySlug`)

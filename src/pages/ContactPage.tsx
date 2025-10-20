@@ -117,8 +117,8 @@ export function ContactPage() {
   return (
     <div className="bg-off-white py-20 md:py-28">
       <SEOHead
-        title="Contact Antek Automation | AI Automation Agency UK"
-        description="Contact Antek Automation: UK AI automation agency delivering bespoke workflows that streamline operations, cut costs & boost ROI for businesses nationwide."
+        title="Contact Antek Automation | AI Automation Agency UK | Free Audit"
+        description="Contact Antek Automation: Book your free automation audit. Leading AI automation agency UK - AI chatbots, voice systems, workflow automation solutions."
         path="/contact"
         breadcrumbs={breadcrumbs}
       />

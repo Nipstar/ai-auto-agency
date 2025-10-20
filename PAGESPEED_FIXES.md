@@ -1,7 +1,7 @@
 # PageSpeed Insights Fixes - Implementation Summary
 
 ## Overview
-This document outlines all the fixes implemented to address PageSpeed Insights issues for https://antekautomation.co.uk, targeting improvements in performance, accessibility, and SEO.
+This document outlines all the fixes implemented to address PageSpeed Insights issues for https://antekautomation.com, targeting improvements in performance, accessibility, and SEO.
 
 ---
 
@@ -20,7 +20,7 @@ Allow: /
 Disallow: /admin/
 Disallow: /.env*
 
-Sitemap: https://antekautomation.co.uk/sitemap.xml
+Sitemap: https://aiautomationagencyuk.com/sitemap.xml
 
 # Block AI crawlers
 User-agent: GPTBot

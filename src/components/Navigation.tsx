@@ -18,9 +18,9 @@ export function Navigation() {
   ];
 
   const serviceLinks = [
-    { label: 'AI Chatbots', href: '/services/ai-chatbots' },
-    { label: 'AI Voice Assistants', href: '/services/ai-voice-assistants' },
-    { label: 'Workflow Automation', href: '/services/workflow-automation' },
+    { label: 'AI Lead Automation', href: '/services/ai-chatbots' },
+    { label: 'Voice Automation Systems', href: '/services/ai-voice-assistants' },
+    { label: 'Business Process Automation', href: '/services/workflow-automation' },
   ];
 
   return (
@@ -75,7 +75,7 @@ export function Navigation() {
                 </>
               )}
             </div>
-            <Button variant="primary" onClick={() => navigate('/contact')}>Get Started</Button>
+            <Button variant="primary" onClick={() => window.dispatchEvent(new Event('openChatbot'))}>Get Started</Button>
           </div>
 
           <button
@@ -116,7 +116,7 @@ export function Navigation() {
                   </button>
                 ))}
               </div>
-              <Button variant="primary" className="w-full" onClick={() => { navigate('/contact'); setIsOpen(false); }}>
+              <Button variant="primary" className="w-full" onClick={() => { window.dispatchEvent(new Event('openChatbot')); setIsOpen(false); }}>
                 Get Started
               </Button>
             </div>

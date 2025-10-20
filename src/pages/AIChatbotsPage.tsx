@@ -15,26 +15,45 @@ export function AIChatbotsPage() {
     { name: 'AI Chatbots', url: '/services/ai-chatbots' },
   ];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'AI Lead Automation Chatbots - Antek Automation',
+    description: 'AI chatbots for capturing leads 24/7, answering FAQs, and booking appointments for UK service businesses',
+    areaServed: {
+      '@type': 'Country',
+      name: 'United Kingdom',
+    },
+    serviceType: 'AI Lead Automation',
+    provider: {
+      '@type': 'Organization',
+      name: 'Antek Automation',
+      url: 'https://aiautomationagencyuk.com',
+    },
+  };
+
   return (
     <div className="bg-off-white">
       <SEOHead
         title="AI Chatbots | Antek Automation | AI Automation Agency UK"
-        description="AI Chatbots by Antek Automation: Capture leads 24/7, answer FAQs & book appointments. Streamline operations for UK businesses nationwide."
+        description="AI Lead Automation Chatbots by Antek Automation: Capture leads 24/7, answer FAQs & book appointments. 40% more leads for UK service businesses."
         path="/services/ai-chatbots"
         breadcrumbs={breadcrumbs}
+        schema={serviceSchema}
+        keywords="ai chatbots, ai lead automation, chatbot for lead generation, customer service automation, conversational ai, ai chatbot for businesses"
       />
       {/* Hero Section */}
       <section className="bg-warm-beige border-b-3 border-charcoal">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-wide text-charcoal mb-4 font-black">
-              AI CHATBOTS | 24/7 LEAD CAPTURE | UK SERVICE BUSINESSES
+              AI LEAD AUTOMATION | 24/7 CHATBOTS | AI AUTOMATION AGENCY UK
             </p>
             <h1 className="font-black text-5xl md:text-6xl uppercase tracking-tight-xl text-charcoal mb-6 leading-tight">
-              AI Chatbots
+              AI Chatbots for Lead Generation
             </h1>
             <p className="text-lg text-charcoal leading-normal mb-8">
-              Your website visitors want answers now, not tomorrow. Our AI chatbots capture leads, answer questions, and book appointments 24/7—even when you're busy or asleep.
+              Our AI automation agency delivers intelligent chatbots that capture leads, answer questions, and book appointments 24/7. Antek Automation helps UK service businesses capture 40% more leads automatically.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" onClick={() => navigate('/contact')}>

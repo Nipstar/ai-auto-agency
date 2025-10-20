@@ -15,26 +15,45 @@ export function WorkflowAutomationPage() {
     { name: 'Workflow Automation', url: '/services/workflow-automation' },
   ];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Workflow Automation Solutions - Antek Automation',
+    description: 'Business process automation that connects your tools, eliminates repetitive work, and saves 20 hours weekly for UK service businesses',
+    areaServed: {
+      '@type': 'Country',
+      name: 'United Kingdom',
+    },
+    serviceType: 'Business Process Automation',
+    provider: {
+      '@type': 'Organization',
+      name: 'Antek Automation',
+      url: 'https://aiautomationagencyuk.com',
+    },
+  };
+
   return (
     <div className="bg-off-white">
       <SEOHead
-        title="Workflow Automation | Antek Automation | AI Automation Agency UK"
-        description="Workflow Automation by Antek Automation: Bespoke workflows that streamline operations, cut costs & boost ROI for UK businesses nationwide."
+        title="Workflow Automation | Business Process Automation | Antek Automation UK"
+        description="Workflow Automation & Business Process Automation by Antek Automation: Save 20hrs/week, streamline operations. AI automation agency for UK service businesses."
         path="/services/workflow-automation"
         breadcrumbs={breadcrumbs}
+        schema={serviceSchema}
+        keywords="workflow automation, business process automation, process automation, workflow management, automation software, workflow optimization"
       />
       {/* Hero Section */}
       <section className="bg-warm-beige border-b-3 border-charcoal">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-wide text-charcoal mb-4 font-black">
-              WORKFLOW AUTOMATION | SAVE 10-20 HOURS WEEKLY | UK SERVICE BUSINESSES
+              BUSINESS PROCESS AUTOMATION | 20 HOURS SAVED WEEKLY | AI AUTOMATION AGENCY UK
             </p>
             <h1 className="font-black text-5xl md:text-6xl uppercase tracking-tight-xl text-charcoal mb-6 leading-tight">
-              Workflow Automation
+              Workflow Automation Solutions
             </h1>
             <p className="text-lg text-charcoal leading-normal mb-8">
-              Your business shouldn't require you to manually copy data between systems, send the same emails repeatedly, or chase payments. We build custom workflows using n8n that connect your tools and automate the repetitive work—so you can focus on growth.
+              Our AI automation agency builds custom business process automation that connects your tools and eliminates repetitive work. Stop manually copying data between systems, sending the same emails, or chasing payments. Save 20 hours weekly and focus on growth.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" onClick={() => navigate('/contact')}>

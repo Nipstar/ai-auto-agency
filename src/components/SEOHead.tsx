@@ -11,9 +11,11 @@ interface SEOHeadProps {
   path: string;
   breadcrumbs?: BreadcrumbItem[];
   schema?: object;
+  ogImage?: string;
+  keywords?: string;
 }
 
-export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHeadProps) {
+export function SEOHead({ title, description, path, breadcrumbs, schema, ogImage, keywords }: SEOHeadProps) {
   useEffect(() => {
     // Set document title
     document.title = title;
@@ -27,6 +29,31 @@ export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHe
     }
     metaDescription.setAttribute('content', description);
 
+    // Set or update keywords meta tag
+    if (keywords) {
+      let metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement('meta');
+        metaKeywords.setAttribute('name', 'keywords');
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.setAttribute('content', keywords);
+    }
+
+    // Set viewport and charset (ensure they're present)
+    if (!document.querySelector('meta[charset]')) {
+      const charsetMeta = document.createElement('meta');
+      charsetMeta.setAttribute('charset', 'utf-8');
+      document.head.insertBefore(charsetMeta, document.head.firstChild);
+    }
+
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.setAttribute('name', 'viewport');
+      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      document.head.appendChild(viewportMeta);
+    }
+
     // Set or update canonical URL
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -34,14 +61,20 @@ export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHe
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', `https://antekautomation.com${path}`);
+    canonicalLink.setAttribute('href', `https://aiautomationagencyuk.com${path}`);
 
     // Set or update Open Graph tags
     const ogTags = [
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
-      { property: 'og:url', content: `https://antekautomation.com${path}` },
+      { property: 'og:url', content: `https://aiautomationagencyuk.com${path}` },
       { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Antek Automation' },
+      { property: 'og:locale', content: 'en_GB' },
+      ...(ogImage ? [{ property: 'og:image', content: ogImage }] : []),
+      ...(ogImage ? [{ property: 'og:image:width', content: '1200' }] : []),
+      ...(ogImage ? [{ property: 'og:image:height', content: '630' }] : []),
+      ...(ogImage ? [{ property: 'og:image:alt', content: title }] : []),
     ];
 
     ogTags.forEach(({ property, content }) => {
@@ -57,8 +90,11 @@ export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHe
     // Set or update Twitter Card tags
     const twitterTags = [
       { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@antekautomation' },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
+      ...(ogImage ? [{ name: 'twitter:image', content: ogImage }] : []),
+      ...(ogImage ? [{ name: 'twitter:image:alt', content: title }] : []),
     ];
 
     twitterTags.forEach(({ name, content }) => {
@@ -80,7 +116,7 @@ export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHe
           '@type': 'ListItem',
           position: index + 1,
           name: item.name,
-          item: `https://antekautomation.com${item.url}`,
+          item: `https://aiautomationagencyuk.com${item.url}`,
         })),
       };
 
@@ -118,7 +154,7 @@ export function SEOHead({ title, description, path, breadcrumbs, schema }: SEOHe
         breadcrumbScript.remove();
       }
     };
-  }, [title, description, path, breadcrumbs, schema]);
+  }, [title, description, path, breadcrumbs, schema, ogImage, keywords]);
 
   return null;
 }

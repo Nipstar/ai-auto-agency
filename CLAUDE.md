@@ -44,6 +44,8 @@ The current route is determined by `window.location.pathname`. Navigation automa
 **Dynamic Location Routes:**
 Location pages use a slug-based pattern (e.g., `/locations/london-ai-automation`). The `LocationPage` component receives the `citySlug` prop extracted from the route.
 
+**Implemented Cities:** London, Manchester, Birmingham, Leeds, Liverpool, Glasgow, Edinburgh, Newcastle, Hampshire. Add new cities by extending the `cities` array in `src/data/cities.ts`.
+
 ### Component Structure
 - **Pages** (`src/pages/`): Top-level page components
   - `HomePage.tsx`: Landing page with hero, services overview, industries
@@ -85,20 +87,24 @@ Letter Spacing: tight-xl (-2px), tight-lg (-1px)
 
 The site integrates with n8n webhooks via environment variables:
 
-**Environment Variables** (create `.env` from `.env.example`):
+**Environment Variables:**
+Create a `.env` file in the root directory with the following variables:
 ```
-VITE_CONTACT_WEBHOOK_URL - Contact form submissions
-VITE_CHATBOT_WEBHOOK_URL - Chatbot messages
-VITE_SUPABASE_URL - Supabase project URL (if using Supabase)
-VITE_SUPABASE_ANON_KEY - Supabase anonymous key (if using Supabase)
+VITE_CONTACT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/contact
+VITE_CHATBOT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/chatbot
+VITE_SUPABASE_URL=                    # Optional: Supabase project URL
+VITE_SUPABASE_ANON_KEY=               # Optional: Supabase anonymous key
 ```
 
+**Important:** Environment variables are read at build time by Vite. Changes to `.env` require restarting the dev server (`npm run dev`).
+
 **Chatbot Behavior:**
-- Auto-opens after 5 seconds on first visit (tracked via `localStorage`)
-- Session ID generated: `session_${timestamp}_${random}`
+- Auto-opens after 5 seconds on first visit (tracked via `localStorage` key: `chatbot_visited`)
+- Session ID generated: `session_${timestamp}_${randomId}`
 - Sends POST to `VITE_CHATBOT_WEBHOOK_URL` with: `{ sessionId, message, timestamp, pageUrl, source }`
-- Expected response: `{ reply: "string" }`
+- Response handling: Expects either `{ reply: "string" }` or `{ output: "string" }` format. Handles both direct objects and array responses from n8n (uses first element if array).
 - Fallback message shown if webhook unavailable or fails
+- Loading indicator with animated dots while waiting for response
 
 **Contact Form:**
 - Sends POST to `VITE_CONTACT_WEBHOOK_URL`
@@ -125,7 +131,7 @@ VITE_SUPABASE_ANON_KEY - Supabase anonymous key (if using Supabase)
 
 ## Key Architectural Decisions
 
-1. **Hash-Based Routing** - Simple manual routing via `window.location.hash`. No server config needed. Simpler than React Router for this app size.
+1. **Pathname-Based Routing** - Uses `window.location.pathname` for clean, SEO-friendly client-side routing (not hash-based, not React Router). Requires SPA fallback on server (index.html serves all routes).
 
 2. **No Backend API** - All webhook communication goes directly to n8n. Enables serverless architecture.
 
@@ -220,10 +226,11 @@ VITE_SUPABASE_ANON_KEY - Supabase anonymous key (if using Supabase)
 5. Add `SEOHead` component with appropriate title, description, and schema
 
 ### Adding Location Pages
-- Add city data to `src/data/cities.ts` with unique slug
-- Route automatically works: `#/locations/city-slug` maps to LocationPage with `citySlug` prop
+- Add city data to `src/data/cities.ts` with structure matching other city objects (slug, name, region, metaDescription, etc.)
+- Route automatically works: `/locations/city-slug` maps to LocationPage with `citySlug` prop
 - No changes to `src/App.tsx` needed - uses dynamic route matching
-- LocationPage component extracts `citySlug` from route and looks up data
+- LocationPage component extracts `citySlug` from route and looks up data via `getCityData(slug)`
+- New cities automatically appear in Footer and location listing
 
 ### Webhook Modifications
 - Environment variables use `VITE_` prefix (Vite convention)
@@ -245,17 +252,45 @@ VITE_SUPABASE_ANON_KEY - Supabase anonymous key (if using Supabase)
 - Modal opens via custom event: `window.dispatchEvent(new Event('openVoiceChat'))`
 - Voice integration available on `AIVoiceAssistantsPage` as demo
 
-## Local Testing with n8n
+## Local Development & Testing
+
+### Setting Up Environment Variables
+
+Create a `.env` file in the root directory. Start with the required variables:
+
+```bash
+# Contact form webhook
+VITE_CONTACT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/contact
+
+# Chatbot webhook
+VITE_CHATBOT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/chatbot
+
+# Optional: Supabase integration (if using)
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+**Important:** Environment variables are read at build time. After updating `.env`, restart the dev server:
+```bash
+npm run dev
+```
+
+### Local Testing with n8n
 
 Use ngrok to expose local n8n instance:
 ```bash
 ngrok http 5678
 ```
 
-Then set environment variables to ngrok URLs:
-```
+Update your `.env` file with ngrok URLs:
+```bash
 VITE_CONTACT_WEBHOOK_URL=https://abc123.ngrok.io/webhook/contact
 VITE_CHATBOT_WEBHOOK_URL=https://abc123.ngrok.io/webhook/chatbot
+```
+
+Restart dev server to apply changes:
+```bash
+npm run dev
 ```
 
 ## Common Development Tasks
@@ -264,6 +299,26 @@ VITE_CHATBOT_WEBHOOK_URL=https://abc123.ngrok.io/webhook/chatbot
 - Vite should auto-reload components on save. If not working, try `npm run dev` again
 - Check that lucide-react is not being dependency-optimized (it's excluded in vite.config.ts)
 - Hard refresh browser (Cmd+Shift+R on Mac)
+- Check browser console for errors that might prevent HMR
+
+### Testing Webhook Response Formats
+ChatbotWidget handles flexible webhook responses:
+- Direct object: `{ reply: "message" }` or `{ output: "message" }`
+- Array response: `[{ reply: "message" }, ...]` (uses first element)
+- n8n returns objects, so either format works
+
+Test with curl:
+```bash
+curl -X POST https://your-webhook-url \
+  -H "Content-Type: application/json" \
+  -d '{
+    "sessionId": "test_session_12345",
+    "message": "hello",
+    "timestamp": "2025-10-20T00:00:00Z",
+    "pageUrl": "http://localhost:5173",
+    "source": "test"
+  }'
+```
 
 ### Type Errors After Code Changes
 - Run `npm run typecheck` to catch all type errors before committing

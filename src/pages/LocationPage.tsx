@@ -61,7 +61,7 @@ export function LocationPage({ citySlug }: LocationPageProps) {
   return (
     <div className="bg-off-white">
       <SEOHead
-        title={`AI Automation Agency ${city.name} | Antek Automation UK`}
+        title={`AI Automation Agency ${city.name} | Antek Automation | Business Growth`}
         description={city.metaDescription}
         path={`/locations/${city.slug}`}
         breadcrumbs={breadcrumbs}
@@ -76,7 +76,7 @@ export function LocationPage({ citySlug }: LocationPageProps) {
               AI AUTOMATION | {city.name.toUpperCase()} | UK AGENCY
             </p>
             <h1 className="font-black text-5xl md:text-6xl uppercase tracking-tight-xl text-charcoal mb-6 leading-tight">
-              Antek Automation {city.name}
+              AI Automation Agency {city.name} | Antek Automation
             </h1>
             <p className="text-lg text-charcoal leading-normal mb-4">
               {city.localContext}

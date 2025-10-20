@@ -14,11 +14,62 @@
   }
 }
 
+@keyframes jitter {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    transform: translate(2px, 2px);
+  }
+  30% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  50% {
+    transform: translate(-1px, -1px);
+  }
+  60% {
+    transform: translate(1px, 1px);
+  }
+  70% {
+    transform: translate(-2px, -1px);
+  }
+  80% {
+    transform: translate(2px, 1px);
+  }
+  90% {
+    transform: translate(-1px, 2px);
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
 @layer utilities {
   .w-15 {
     width: 3.75rem;
   }
   .h-15 {
     height: 3.75rem;
+  }
+  .animate-jitter {
+    animation: jitter 0.5s infinite;
+  }
+  .animate-pulse-scale {
+    animation: pulse-scale 2s infinite;
+  }
+  .animate-jitter-pulse {
+    animation: jitter 0.5s infinite, pulse-scale 3s infinite;
   }
 }

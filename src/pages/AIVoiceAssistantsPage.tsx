@@ -21,26 +21,45 @@ export function AIVoiceAssistantsPage() {
     { name: 'AI Voice Assistants', url: '/services/ai-voice-assistants' },
   ];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Voice Automation Systems - Antek Automation',
+    description: 'Professional AI phone agents that answer calls 24/7, book appointments, and handle customer inquiries for UK service businesses',
+    areaServed: {
+      '@type': 'Country',
+      name: 'United Kingdom',
+    },
+    serviceType: 'Voice Automation',
+    provider: {
+      '@type': 'Organization',
+      name: 'Antek Automation',
+      url: 'https://aiautomationagencyuk.com',
+    },
+  };
+
   return (
     <div className="bg-off-white">
       <SEOHead
-        title="AI Voice Agents | AI Voice Assistants | Antek Automation UK"
-        description="AI Voice Agents by Antek Automation: Answer calls 24/7, book appointments & handle queries. Boost ROI for UK businesses nationwide."
+        title="Voice Automation Systems | AI Phone Agents | Antek Automation UK"
+        description="Voice Automation Systems by Antek Automation: AI phone agents answer calls 24/7, book appointments. 40% more leads for UK service businesses."
         path="/services/ai-voice-assistants"
         breadcrumbs={breadcrumbs}
+        schema={serviceSchema}
+        keywords="voice automation, ai phone agents, voice ai, ai voice assistants, automated call answering, voice bot, phone system automation"
       />
       {/* Hero Section */}
       <section className="bg-warm-beige border-b-3 border-charcoal">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
           <div className="max-w-4xl">
             <p className="text-sm uppercase tracking-wide text-charcoal mb-4 font-black">
-              AI VOICE AGENTS | NEVER MISS CALLS | UK SERVICE BUSINESSES
+              VOICE AUTOMATION | AI PHONE SYSTEMS | AI AUTOMATION AGENCY UK
             </p>
             <h1 className="font-black text-5xl md:text-6xl uppercase tracking-tight-xl text-charcoal mb-6 leading-tight">
-              AI Voice Agents
+              Voice Automation Systems
             </h1>
             <p className="text-lg text-charcoal leading-normal mb-8">
-              Stop dropping tools mid-job to answer the phone. Our intelligent assistants handle incoming calls 24/7, answer questions, take bookings, and route urgent matters to you—all with natural, human-like conversation.
+              Our AI automation agency delivers professional voice automation systems that handle incoming calls 24/7, answer questions, take bookings, and route urgent matters to you—all with natural conversation. Never miss a customer call again.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" onClick={() => navigate('/contact')}>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(git clone:*)",
+      "Read(//private/tmp/**)",
+      "Bash(cat:*)",
+      "Bash(tree:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

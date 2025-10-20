@@ -11,6 +11,7 @@ export function ChatbotWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId] = useState(() => `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`);
   const [hasAutoOpened, setHasAutoOpened] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -63,6 +64,24 @@ export function ChatbotWidget() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Animation on/off cycle for attention-grabbing effect
+  useEffect(() => {
+    if (isOpen) {
+      setShowAnimation(false);
+      return;
+    }
+
+    // Show animation for 3 seconds, then hide for 4 seconds, repeat
+    const animationInterval = setInterval(() => {
+      setShowAnimation((prev) => !prev);
+    }, 3500);
+
+    // Start with animation showing
+    setShowAnimation(true);
+
+    return () => clearInterval(animationInterval);
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen && !isLoading) {
@@ -182,7 +201,9 @@ export function ChatbotWidget() {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-15 h-15 bg-terracotta border-3 border-charcoal shadow-brutal-sm rounded-sm flex items-center justify-center hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-brutal transition-all duration-200 z-50"
+        className={`fixed bottom-6 right-6 w-15 h-15 bg-terracotta border-3 border-charcoal shadow-brutal-sm rounded-sm flex items-center justify-center hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-brutal transition-all duration-200 z-50 ${
+          showAnimation && !isOpen ? 'animate-jitter-pulse' : ''
+        }`}
         aria-label="Open chat"
       >
         {isOpen ? (
