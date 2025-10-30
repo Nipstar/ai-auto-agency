@@ -365,7 +365,7 @@ export const cities: Record<string, CityData> = {
     localContext:
       'Hampshire is spread out. Portsmouth contracts. Southampton jobs. Winchester clients. Rural emergencies. One business, one phone, too many places. That\'s where AI actually solves a real Hampshire problem.',
     metaDescription:
-      'AI automation for Hampshire businesses. Voice agents, chatbots & workflow automation to boost efficiency & ROI. Antek Automation UK.',
+      'AI voice agents & chatbots for Hampshire | Answer every call 24/7 | Capture leads & book appointments | Antek Automation UK',
     heroDescription:
       'Hampshire service businesses cover massive distances. Southampton to Aldershot. Portsmouth to Winchester. One phone, endless travel. Our AI works everywhere, answering from coast to countryside, booking every appointment while you drive between jobs. Total Hampshire coverage. Zero missed calls.',
     whyChooseUs: [
