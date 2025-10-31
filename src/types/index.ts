@@ -31,3 +31,11 @@ export interface ChatState {
   userInfo: { name?: string; email?: string };
   isLoading: boolean;
 }
+
+// Google Analytics types
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}

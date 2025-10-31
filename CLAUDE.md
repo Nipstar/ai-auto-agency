@@ -85,20 +85,58 @@ Shadows: shadow-brutal, shadow-brutal-sm, shadow-brutal-lg, shadow-brutal-xs,
 Letter Spacing: tight-xl (-2px), tight-lg (-1px)
 ```
 
-## Webhook Integration
+## Environment Configuration
+
+Environment variables are defined in `.env` at the root directory. A `.env.example` template is provided as a reference.
+
+**Important:** Environment variables are read at build time by Vite. Changes to `.env` require restarting the dev server (`npm run dev`).
+
+### Webhook Integration
 
 The site integrates with n8n webhooks via environment variables:
 
-**Environment Variables:**
-Create a `.env` file in the root directory with the following variables. A template is available in `.env.example`:
+**Required Variables:**
 ```
 VITE_CONTACT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/contact
 VITE_CHATBOT_WEBHOOK_URL=https://your-n8n-instance.com/webhook/chatbot
-VITE_SUPABASE_URL=                    # Optional: Supabase project URL
-VITE_SUPABASE_ANON_KEY=               # Optional: Supabase anonymous key
 ```
 
-**Important:** Environment variables are read at build time by Vite. Changes to `.env` require restarting the dev server (`npm run dev`).
+**Optional Variables:**
+```
+VITE_SUPABASE_URL=                    # Supabase project URL
+VITE_SUPABASE_ANON_KEY=               # Supabase anonymous key
+VITE_GA_MEASUREMENT_ID=               # Google Analytics Measurement ID (G-XXXXXXXXXX)
+```
+
+### Google Analytics
+
+Google Analytics is integrated via gtag.js and automatically tracks page views for all route changes (SPA navigation).
+
+**Setup:**
+1. Create a Google Analytics property at [google.com/analytics](https://analytics.google.com)
+2. Get your Measurement ID (format: `G-XXXXXXXXXX`)
+3. Set `VITE_GA_MEASUREMENT_ID` in Vercel environment variables (recommended) or `.env` for local testing
+4. The app will automatically load gtag and track:
+   - Initial page load
+   - Route changes (e.g., navigating between pages, location pages)
+   - Page views include `page_path` and `page_title`
+
+**Custom Event Tracking:**
+Use `trackEvent()` from `src/utils/analytics.ts` to track custom events:
+```typescript
+import { trackEvent } from './utils/analytics';
+
+// Track contact form submission
+trackEvent('form_submit', 'contact_form', 'submit_button');
+
+// Track chatbot interaction
+trackEvent('chatbot_message', 'engagement', 'user_message', 1);
+```
+
+**Analytics Utility Functions:**
+- `initializeAnalytics()` - Loads gtag script (called on app mount)
+- `trackPageView(path)` - Tracks page view (called on route change)
+- `trackEvent(action, category, label?, value?)` - Tracks custom events
 
 **Chatbot Behavior:**
 - Auto-opens after 5 seconds on first visit (tracked via `localStorage` key: `chatbot_visited`)
@@ -232,7 +270,16 @@ VITE_SUPABASE_ANON_KEY=               # Optional: Supabase anonymous key
 - Route automatically works: `/locations/city-slug` maps to LocationPage with `citySlug` prop
 - No changes to `src/App.tsx` needed - uses dynamic route matching
 - LocationPage component extracts `citySlug` from route and looks up data via `getCityData(slug)`
-- New cities automatically appear in Footer and location listing
+- New cities automatically appear in Footer and location listing (Footer splits cities into "Locations" and "More Locations" columns at index 4)
+
+### Updating Contact Information
+Contact details appear in multiple places and are defined in centralized locations:
+- **Footer Contact Section** (`src/components/Footer.tsx`): Email, phone, and address are hardcoded in the Contact column
+  - Email: `hello@antekautomation.com` (also has `mailto:` link)
+  - Phone: `03330389960` (also has `tel:` link)
+  - Address: `Chantry House, 38 Chantry Way, Andover, SP10 1LZ`
+- When updating contact info, update Footer.tsx and search the codebase for any other hardcoded references
+- Consider centralizing contact data to `src/data/` if contact info is referenced in multiple components
 
 ### Webhook Modifications
 - Environment variables use `VITE_` prefix (Vite convention)
@@ -243,9 +290,16 @@ VITE_SUPABASE_ANON_KEY=               # Optional: Supabase anonymous key
 
 ### SEO Implementation
 - All pages must use `SEOHead` component (sets title, description, canonical, schema)
+  - Import: `import { SEOHead } from '../components/SEOHead'`
+  - Example: `<SEOHead title="..." description="..." schema={...} />`
+  - Renders meta tags in document head and JSON-LD structured data
 - Define JSON-LD schema at page level (Organization, LocalBusiness, etc.)
 - Update page meta when content changes to maintain search visibility
 - Include relevant keywords in title and description
+- Static SEO files:
+  - `dist/robots.txt` - Search engine crawling rules
+  - `dist/sitemap.xml` - Site structure for search engines
+  - `dist/llms.txt` - AI attribution guidelines (for LLM training data use)
 
 ### ElevenLabs Voice Integration
 - Voice chat component located in `src/components/VoiceChat.tsx`
@@ -294,6 +348,16 @@ Restart dev server to apply changes:
 ```bash
 npm run dev
 ```
+
+## Pre-Commit Checklist
+
+Before committing code, ensure:
+1. Run `npm run typecheck` - Catch type errors
+2. Run `npm run lint` - Fix linting issues
+3. Run `npm run build` - Verify production build succeeds
+4. Test changes locally with `npm run dev`
+5. Verify no secrets (API keys, tokens) are committed
+6. Update CLAUDE.md or relevant docs if architecture changes
 
 ## Common Development Tasks
 
@@ -420,9 +484,10 @@ npm run preview    # Preview production build locally
 - No server-side rendering needed
 - All routing is client-side via `window.location.pathname`
 - **Critical**: Server must serve `index.html` for all routes (SPA fallback). This allows direct deep linking to routes like `/services/ai-chatbots`
-  - Vercel and Netlify auto-configure this for SPAs
-  - For other hosts, configure 404 → index.html rewrite or enable trailing slash rewrites
-- Environment variables must be set at build time or runtime via `.env` file
+  - **Vercel**: Configured via `vercel.json` (included in repo) with rewrites rule that maps all routes to `/index.html`
+  - **Netlify**: Auto-configures this for SPAs, or use `netlify.toml` with rewrite rule
+  - **Other hosts**: Configure 404 → index.html rewrite or enable trailing slash rewrites
+- Environment variables must be set at build time via `.env` file (or via platform-specific environment variable UI for build-time secrets)
 
 ## TypeScript Strictness
 
