@@ -14,45 +14,30 @@
   }
 }
 
+/* GPU-accelerated animations using transform only */
 @keyframes jitter {
   0%, 100% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) translateZ(0);
   }
-  10% {
-    transform: translate(-2px, -2px);
-  }
-  20% {
-    transform: translate(2px, 2px);
-  }
-  30% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(2px, -2px);
+  25% {
+    transform: translate(-1px, -1px) translateZ(0);
   }
   50% {
-    transform: translate(-1px, -1px);
+    transform: translate(1px, 1px) translateZ(0);
   }
-  60% {
-    transform: translate(1px, 1px);
-  }
-  70% {
-    transform: translate(-2px, -1px);
-  }
-  80% {
-    transform: translate(2px, 1px);
-  }
-  90% {
-    transform: translate(-1px, 2px);
+  75% {
+    transform: translate(-1px, 1px) translateZ(0);
   }
 }
 
 @keyframes pulse-scale {
   0%, 100% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(1.05) translateZ(0);
+    opacity: 0.9;
   }
 }
 
@@ -64,12 +49,15 @@
     height: 3.75rem;
   }
   .animate-jitter {
-    animation: jitter 0.5s infinite;
+    animation: jitter 1s infinite ease-in-out;
+    will-change: transform;
   }
   .animate-pulse-scale {
-    animation: pulse-scale 2s infinite;
+    animation: pulse-scale 2.5s infinite ease-in-out;
+    will-change: transform, opacity;
   }
   .animate-jitter-pulse {
-    animation: jitter 0.5s infinite, pulse-scale 3s infinite;
+    animation: jitter 1s infinite ease-in-out, pulse-scale 3s infinite ease-in-out;
+    will-change: transform, opacity;
   }
 }
